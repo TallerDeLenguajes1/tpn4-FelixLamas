@@ -13,7 +13,7 @@ void cargarTareas (Tarea **pTPendientes, int cantidadT);
 void controlarTareas(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad);
 void mostrar (Tarea **pTPendientes, int cantidad);
 void BusquedaPorId(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad, Tarea *busc);
-void BusqudeaPorId(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad, Tarea *busc);
+void BusqudeaPorPalabra(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad, Tarea *busc);
 
 
 int main(int argc, char const *argv[])
@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
     mostrar(TareasRealizadas, cantidadTareas);
 
     BusquedaPorId(TareasPendientes, TareasRealizadas, cantidadTareas, &busc1);
-    BusqudeaPorId(TareasPendientes, TareasRealizadas, cantidadTareas, &busc2);
+    BusqudeaPorPalabra(TareasPendientes, TareasRealizadas, cantidadTareas, &busc2);
     free(*TareasPendientes);
     free(*TareasRealizadas);
     return 0;
@@ -125,7 +125,7 @@ void BusquedaPorId(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad, Tar
     }   
 }
 
-void BusqudeaPorId(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad, Tarea *busc)
+void BusqudeaPorPalabra(Tarea **pTPendientes, Tarea **pTRealizadas, int cantidad, Tarea *busc)
 {
     char busqueda[TAMANIO];
     printf("Ingrese una palabra clave para la busqueda de la tarea:");
